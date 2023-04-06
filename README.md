@@ -1,6 +1,6 @@
 # STUDENTS-ATTENDANCE-MANAGEMENT-SYSTEM
 
-##ABSTRACT
+## ABSTRACT
 Integrity and sincerity are the pillars of a successful learning space. But these factors
 do not come complimentary. They need to be developed and inculcated by forming
 a disciplined and well-regulated study environment. To achieve this discipline, it is
@@ -12,7 +12,7 @@ and non-manipulative. Conventionally an Attendance Management system could be
 understood as a set of methods and procedures which are carried out for the purpose
 of regulating students’ attendance
 
-##INTRODUCTION
+## INTRODUCTION
 In today's competitive world, with increasing working hours and less classroom
 time, teachers need EdTech tools which help them manage precious class time
 efficiently. Instead of focusing on teaching, faculty members are often stuck with
@@ -27,7 +27,7 @@ maintain accurate records and generate summarized student attendance reports
 Attendance management system keeps track of daily attendance of students. This
 backend module can be integrated with an interface to ensure better useability.
 
-##PROBLEM STATEMENT
+## PROBLEM STATEMENT
 A professor finds difficulty in managing the student’s attendance at attendance
 book. Help her to overcome this problem
 Solution: Development of backend module of collage attendance ERP.
