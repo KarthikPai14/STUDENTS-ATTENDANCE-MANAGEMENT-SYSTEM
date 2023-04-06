@@ -1,0 +1,131 @@
+import java.util.*;
+import java.io.*;
+public class erp
+{
+public static void main(String args[])
+{ int[][] a=new int[101][31];
+int[][] b=new int[101][31];
+int sa=0;
+int sb=0;
+int da=0;
+int db=0;
+int choice=0;
+int c=0;
+int f=0;
+int count=0;
+Scanner sc=new Scanner(System.in);
+System.out.println("\t\t\tDayananda Sagar University\n\t\tAttendance ERP System");
+for(;;)
+{System.out.println("Enter no of students in section A");
+sa=sc.nextInt();
+if(sa<101 && sa>0){break;}else {System.out.println("Enter valid strength below 100 and greater than 0");}
+}
+for(;;)
+{System.out.println("Enter no of students in section B");
+sb=sc.nextInt();
+if(sb<101 && sb>0){break;}else {System.out.println("Enter valid strength below 100 and greater than 0");}
+}
+System.out.println("Enter USNs of A");
+for(int i=1;i<=sa;i++)
+{ System.out.println("Enter USN "+i);
+a[i][0]=sc.nextInt();
+}
+System.out.println("Enter USNs of B");
+for(int i=1;i<=sb;i++)
+{ System.out.println("Enter USN "+i);
+b[i][0]=sc.nextInt();
+for(;;)
+{ System.out.println("Enter section\n1-A\n2-B");
+choice=sc.nextInt();
+if(choice!=1 && choice!=2){continue;}
+System.out.println("1-Attendance\n2-Display\n3-Overview");
+c=sc.nextInt();
+if(c!=1 && c!=2 && c!=3){continue;}
+if(choice==1 && c==1 && da<=29)
+{System.out.println("Enter date 1 to 31");
+choice=sc.nextInt();
+if(choice<1 || choice>31){continue;}
+else {da++; a[0][da]=choice;}
+for(int i=1;i<=sa;i++)
+{for(;;)
+{
+System.out.println("Enter attendance of "+a[i][0]+"\n1-Present\n2-Absent");
+choice=sc.nextInt();
+if(choice==1 || choice==2){a[i][da]=choice;break;} else
+{continue;}
+}}}
+if(choice==1 && c==2)
+{ System.out.println("Enter date");
+choice=sc.nextInt();
+f=0;
+for(int i=1;i<31;i++)
+{
+if(choice==a[0][i])
+{f=i;break;}
+}
+if(f>0)
+{System.out.println("USN\tATTENDANCE");
+for(int i=1;i<=sa;i++)
+{ System.out.println(a[i][0]+"\t"+a[i][f]); }
+} else {System.out.println("Date not present"); }
+}
+if(choice==2 && c==1 && db<30)
+{System.out.println("Enter date 1 to 31");
+choice=sc.nextInt();
+if(choice<1 || choice>31){continue;}
+else {db++; b[0][db]=choice;}
+for(int i=1;i<=sb;i++)
+{for(;;)
+{
+System.out.println("Enter attendance of "+b[i][0]+"\n1-Present\n2-Absent\n");
+choice=sc.nextInt();
+if(choice==1 || choice==2){b[i][db]=choice;break;} else
+{continue;}
+}}}
+if(choice==2 && c==2)
+{ System.out.println("Enter date");
+choice=sc.nextInt();
+f=0;
+for(int i=1;i<31;i++)
+{
+if(choice==b[0][i])
+{f=i;break;}
+}
+if(f>0)
+{System.out.println("USN\tATTENDANCE");
+for(int i=1;i<=sb;i++)
+{ System.out.println(b[i][0]+"\t"+b[i][f]); }
+} else {System.out.println("Date not present"); }
+if(choice==2 && c==3)
+{ System.out.println("Enter date");
+choice=sc.nextInt();
+f=0;
+for(int i=1;i<31;i++)
+{
+if(choice==b[0][i])
+{f=i;break;}
+}
+if(f>0)
+{ count=0;
+for(int i=1;i<=sb;i++)
+{ if(b[i][f]==1){count=count+1;}
+}
+System.out.println("Total strength:"+sb+"\nTotal present:"+count);
+} else {System.out.println("Date not present"); }
+}
+if(choice==1 && c==3)
+{ System.out.println("Enter date");
+choice=sc.nextInt();
+f=0;
+for(int i=1;i<31;i++)
+{
+if(choice==a[0][i])
+{f=i;break;}
+}
+if(f>0)
+{ count=0;
+for(int i=1;i<=sa;i++)
+{ if(a[i][f]==1){count=count+1;}
+}
+System.out.println("Total strength:"+sa+"\nTotal present:"+count);
+} else {System.out.println("Date not present") }
